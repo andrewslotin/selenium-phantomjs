@@ -24,7 +24,7 @@ To use PhantomJS as a browser for Selenium test just add to your ```spec_helper.
 Capybara.default_driver = :selenium_phantomjs
 ```
 
-Please note that Ghostdriver needs [Selenium Hub](https://code.google.com/p/selenium/wiki/Grid2) to run at ```localhost:4444```.
+Please note that Ghostdriver needs [Selenium Hub](https://code.google.com/p/selenium/wiki/Grid2) run on ```localhost:4444```.
 
 ## Contributing
 
