@@ -1,6 +1,6 @@
 # Selenium::Phantomjs
 
-TODO: Write a gem description
+Provides integration between selenium-webdriver and PhantomJS via Ghostdriver
 
 ## Installation
 
@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use PhantomJS as a browser for Selenium test just add to your ```spec_helper.rb``` or ```Spork.prefork``` block
+
+```ruby
+Capybara.default_driver = :selenium_phantomjs
+```
+
+Please note that Ghostdriver needs Selenium Grid server to run at ```localhost:4444```. To run a server do
+
+```
+./selenium-server-standalone
+```
 
 ## Contributing
 
