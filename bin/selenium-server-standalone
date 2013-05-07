@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-
-%x{java -jar ~/.selenium/assets/selenium-server-standalone-2.32.0.jar -role hub}
