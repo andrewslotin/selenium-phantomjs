@@ -26,6 +26,17 @@ Capybara.default_driver = :selenium_phantomjs
 
 Please note that Ghostdriver needs [Selenium Hub](https://code.google.com/p/selenium/wiki/Grid2) run on ```localhost:4444```.
 
+## How to pass startup args to PhantomJS
+
+If you want to pass command line args to the phantmojs binary by startup you
+can:
+
+```ruby
+Selenium::Phantomjs.start(:proxy => 'localhost:45678')
+```
+
+This will start a Phantomjs instance with `--proxy="localhost:45678"` argument
+
 ## Contributing
 
 1. Fork it
