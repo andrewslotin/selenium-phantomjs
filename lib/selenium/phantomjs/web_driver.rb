@@ -7,10 +7,9 @@ module Selenium
 
       def run(args = {}, options = {[:out, :err] => [LOG, 'a']})
         phantomjs_args = {
-          :wd                            => nil,
           :'webdriver-selenium-grid-hub' => SELENIUM_GRID_URL,
           :'webdriver-loglevel'          => LOGLEVEL
-        }.merge(args)
+        }.merge(args).merge(wd: nil)
 
         super(phantomjs_args, options)
       end
