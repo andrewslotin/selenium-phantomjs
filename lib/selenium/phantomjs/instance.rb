@@ -20,7 +20,7 @@ module Selenium
         arguments = if args.is_a? Hash
           args.map do |k, v| 
             if v
-              %Q{--#{k}="#{v}"}
+              %Q{--#{k}=#{v}}
             else
               "--#{k}"
             end
@@ -31,7 +31,8 @@ module Selenium
 
         raise ArgumentError.new("PhantomJS: interactive shell is not supported.") if arguments.empty?
 
-        @pid = Process.spawn(%Q{#{PHANTOMJS_BIN} #{arguments.join(" ")}}, options)
+        command = [PHANTOMJS_BIN] + arguments
+        @pid = Process.spawn(*command, options)
         Process.detach(@pid)
 
         sleep 1
